@@ -1,0 +1,18 @@
+[
+    {
+      "category": "Account & Finance",
+      "jobsAvailable": 300
+    },
+    {
+      "category": "Creative Design",
+      "jobsAvailable": "100+"
+    },
+    {
+      "category": "Marketing & Sales",
+      "jobsAvailable": 150
+    },
+    {
+      "category": "Engineering Job",
+      "jobsAvailable": 224
+    }
+  ]
