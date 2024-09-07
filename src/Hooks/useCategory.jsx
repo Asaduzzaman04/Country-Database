@@ -8,7 +8,7 @@ const useCategory = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("/category.json");
+                const response = await fetch("./category.json");
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }

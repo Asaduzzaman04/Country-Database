@@ -6,6 +6,7 @@ import Contact from "../Pages/Contact";
 import CountryDetails from "../Pages/CountryDetails";
 import ErrorPage from "../Pages/ErrorPage";
 import Blogs from "../Pages/Blogs";
+import Favourite from "../Pages/Favourite";
 
 
 const Router = createBrowserRouter([
@@ -25,6 +26,10 @@ const Router = createBrowserRouter([
         {
             path: "/blog",
             element: <Blogs/>
+        },
+        {
+            path: "/favourite",
+            element: <Favourite/>
         },
         {
             path: "/countryDetails/:countryName",

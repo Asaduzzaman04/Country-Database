@@ -1,9 +1,12 @@
 import {  useParams } from "react-router-dom";
 import useCountryData from "../Hooks/useCountryData";
+import useFavouriteStore from "../Hooks/useFavouriteStore";
+import { toast, ToastContainer } from "react-toastify";
 
 const CountryDetails = () => {
     const {countryName} = useParams()
     const [countries, error, loading] = useCountryData()
+    const addToFavourite = useFavouriteStore(state => state.addToFavourite)
     if(loading){
         return <span className="loading loading-ring loading-lg"></span>
     }
@@ -17,12 +20,20 @@ const CountryDetails = () => {
     const [country] = countryArray
     console.log(country)
     const { name, flags} = country
+
+    const handleFavourite = (country)=>{
+        addToFavourite(country)
+        toast("added to favourite!")
+    }
+
+
     return (
         <div>
             <h1>Country: {countryName}</h1>
             <h1>Country: {name.common}</h1>
             <img src={flags.png} alt="" />
-            <button className="my-5 btn btn-accent btn-sm btn-outline">Add to favourite</button>
+            <button onClick={()=> handleFavourite(country)} className="my-5 btn btn-accent btn-sm btn-outline">Add to favourite</button>
+            <ToastContainer />
         </div>
     );
 };
